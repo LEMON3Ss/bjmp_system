@@ -30,6 +30,8 @@ $result_logs = $conn->query($sql_logs);
 $logs = [];
 if ($result_logs) {
     while ($row = $result_logs->fetch_assoc()) {
+        // Remove the IP address from the description on the server-side
+        $row['description'] = preg_replace('/ from IP (::1|[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})\.?$/', '', $row['description']);
         $logs[] = $row;
     }
 }

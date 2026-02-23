@@ -83,13 +83,32 @@ body {
 
 .logout-form {
     border-top: 1px solid rgba(255,255,255,0.1);
-    padding: 10px 0;
+    padding: 20px;
+    margin-top: auto;
+}
+
+.logout-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #c0392b 0%, #a52a2a 100%); /* Darker red gradient */
+    color: white; /* Ensures text is visible on dark background */
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
 .logout-btn:hover {
-    background: rgba(231, 76, 60, 0.2);
-    color: #e74c3c;
-    border-left-color: #e74c3c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); /* More vibrant red on hover */
 }
 
 /* ========== MAIN CONTENT ========== */

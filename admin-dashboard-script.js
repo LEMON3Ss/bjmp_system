@@ -26,8 +26,11 @@ function loadAdminStats() {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                document.getElementById('totalOfficers').textContent = data.total_officers;
-                document.getElementById('totalDetainees').textContent = data.total_detainees;
+                document.getElementById('totalOfficers').textContent = data.total_officers || 0;
+                document.getElementById('totalDetainees').textContent = data.total_detainees || 0;
+                document.getElementById('todayVisitors').textContent = data.today_visitors || 0;
+                document.getElementById('totalVisitors').textContent = data.total_visitors || 0;
+                document.getElementById('currentlyInside').textContent = data.currently_inside || 0;
             }
         })
         .catch(error => {

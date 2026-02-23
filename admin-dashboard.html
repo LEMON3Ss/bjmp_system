@@ -15,36 +15,64 @@
             </div>
             <nav class="nav-menu">
                 <a href="admin-dashboard.html" class="nav-link active"><span>📊</span> Dashboard</a>
+                <a href="today-visitors.html" class="nav-link"><span>📅</span> Today's Visitors</a>
+                <a href="visitor-list.html" class="nav-link"><span>👤</span> All Visitor Logs</a>
                 <a href="manage-officers.html" class="nav-link"><span>👥</span> Manage Officers</a>
-                <a href="manage-detainees.html" class="nav-link"><span>🔒</span> Manage Detainees</a>
+                <a href="manage-detainees.html" class="nav-link"><span>🔒</span> Manage Individuals</a>
                 <a href="system-reports.html" class="nav-link"><span>📈</span> Reports</a>
+                
             </nav>
-            <div class="logout-form">
-                <a href="logout.php" class="nav-link logout-btn"><span>🚪</span> Logout</a>
-            </div>
+            <form action="logout.php" method="POST" class="logout-form">
+                <button type="submit" class="logout-btn"><span>🚪</span> Logout</button>
+            </form>
         </aside>
 
         <main class="main-content">
             <header class="header">
                 <h1>Admin Dashboard</h1>
-                <div class="user-info"><span class="badge badge-admin">ADMIN</span></div>
+                <div class="user-info">
+                    <span id="adminName">System Administrator</span>
+                    <span class="badge badge-admin">ADMIN</span>
+                </div>
             </header>
 
+            <!-- Combined Stats Grid -->
             <div class="stats-grid">
                 <div class="stat-card stat-card-blue">
-                    <div class="stat-icon">👥</div>
+                    <div class="stat-info">
+                        <h3>Today's Visitors</h3>
+                        <p class="stat-number" id="todayVisitors">0</p>
+                    </div>
+                </div>
+                <div class="stat-card stat-card-green">
+                    <div class="stat-info">
+                        <h3>Currently Inside</h3>
+                        <p class="stat-number" id="currentlyInside">0</p>
+                    </div>
+                </div>
+                <div class="stat-card stat-card-purple">
                     <div class="stat-info">
                         <h3>Total Officers</h3>
                         <p class="stat-number" id="totalOfficers">0</p>
                     </div>
                 </div>
                 <div class="stat-card stat-card-purple">
-                    <div class="stat-icon">🔒</div>
                     <div class="stat-info">
-                        <h3>Total Detainees</h3>
+                        <h3>Active Individuals</h3>
                         <p class="stat-number" id="totalDetainees">0</p>
                     </div>
                 </div>
+                <div class="stat-card stat-card-orange">
+                    <div class="stat-info">
+                        <h3>Total Visitor Logs</h3>
+                        <p class="stat-number" id="totalVisitors">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h2>System Overview</h2>
+                <p>This is the admin dashboard. You have full access to manage officers, detainees, and view all system-wide visitor logs and statistics.</p>
             </div>
         </main>
     </div>

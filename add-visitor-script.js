@@ -5,7 +5,7 @@ function loadDetainees() {
         .then(data => {
             if (data.success && data.detainees) {
                 const select = document.getElementById('detaineeId');
-                select.innerHTML = '<option value="">Select Detainee</option>';
+                select.innerHTML = '<option value="" disabled selected>Select Individual</option>';
                 
                 data.detainees.forEach(detainee => {
                     const option = document.createElement('option');

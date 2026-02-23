@@ -22,29 +22,20 @@
                 <a href="add-visitor.html" class="nav-link active">
                     <span>➕</span> Log Visitor
                 </a>
-                <a href="visitor-list.html" class="nav-link">
-                    <span>📋</span> Visitors Log
-                </a>
-                <a href="search-detainee.html" class="nav-link">
-                    <span>🔍</span> Search Detainee
-                </a>
-                <a href="today-visitors.html" class="nav-link">
-                    <span>📅</span> Today's Visitors
+                <a href="visitorlist_officer.html" class="nav-link">
+                    <span>📋</span> Visitor List
                 </a>
             </nav>
 
-            <div class="logout-form">
-                <a href="logout.php" class="nav-link logout-btn">
-                    <span>🚪</span> Logout
-                </a>
-            </div>
+            <form action="logout.php" method="POST" class="logout-form">
+                <button type="submit" class="logout-btn"><span>🚪</span> Logout</button>
+            </form>
         </aside>
 
         <!-- Main Content -->
         <main class="main-content">
             <header class="header">
                 <h1>Log New Visitor</h1>
-                <a href="visitor-list.html" class="btn btn-secondary">← Back to List</a>
             </header>
 
             <div id="alertContainer"></div>
@@ -70,7 +61,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="relationship">Relationship to Detainee <span class="required">*</span></label>
+                            <label for="relationship">Relationship to Individual <span class="required">*</span></label>
                             <select id="relationship" name="relationship" required>
                                 <option value="">Select Relationship</option>
                                 <option value="Spouse">Spouse</option>
@@ -86,9 +77,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="detaineeId">Detainee <span class="required">*</span></label>
+                        <label for="detaineeId">Person Deprived of Liberty <span class="required">*</span></label>
                         <select id="detaineeId" name="detainee_id" required>
-                            <option value="">Select Detainee</option>
+                            <option value="" disabled selected>Select Individual</option>
                             <!-- Will be populated by JavaScript -->
                         </select>
                     </div>

@@ -38,12 +38,11 @@ function loadReports() {
                             <td>${l.username || 'System'}</td>
                             <td>${l.action}</td>
                             <td>${l.description}</td>
-                            <td>${l.ip_address}</td>
                         `;
                         logBody.appendChild(row);
                     });
                 } else {
-                    logBody.innerHTML = '<tr><td colspan="5" class="no-data">No logs found</td></tr>';
+                    logBody.innerHTML = '<tr><td colspan="4" class="no-data">No logs found</td></tr>';
                 }
             }
         })
